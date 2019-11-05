@@ -35,7 +35,12 @@ export default class Reactions extends React.Component {
             selectedReaction={reactionId}
             onPress={this.toggleReaction}
           />
-          {isOpen ? <ReactionPicker onPress={this.handleReaction} /> : null}
+          {isOpen ? (
+            <ReactionPicker
+              selectedReaction={reactionId}
+              onPress={this.handleReaction}
+            />
+          ) : null}
         </View>
         <ReactionBar />
       </React.Fragment>
