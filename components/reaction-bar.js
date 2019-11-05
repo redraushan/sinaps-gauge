@@ -1,8 +1,28 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
+import { REACTION_COLOR } from "./constant";
 
-export default function ReactionBar() {
-  return <View style={{ ...styles.container }}></View>;
+export default function ReactionBar({ reactions }) {
+  return (
+    <View style={styles.container}>
+      {reactions.map((reaction, index, arr) => {
+        return reaction.value > 0 ? (
+          <View
+            key={reaction.id}
+            style={{
+              ...styles.bar,
+              backgroundColor: REACTION_COLOR[reaction.id],
+              width: `${reaction.value}%`,
+              borderTopLeftRadius: index === 0 ? 500 : 0,
+              borderBottomLeftRadius: index === 0 ? 500 : 0,
+              borderTopRightRadius: index === arr.length - 1 ? 500 : 0,
+              borderBottomRightRadius: index === arr.length - 1 ? 500 : 0
+            }}
+          ></View>
+        ) : null;
+      })}
+    </View>
+  );
 }
 
 ReactionBar.defaultProps = {
@@ -11,15 +31,16 @@ ReactionBar.defaultProps = {
 
 const styles = StyleSheet.create({
   container: {
+    justifyContent: "center",
+    flexDirection: "row",
+    paddingTop: 20
+  },
+  bar: {
     height: 10,
     shadowOffset: { width: 0, height: 2 },
     shadowColor: "black",
     shadowRadius: 2,
-    shadowOpacity: 0.3,
-    backgroundColor: "#fff",
-    borderRadius: 500,
-    marginLeft: 10,
-    marginRight: 10,
-    marginBottom: 20
+    shadowOpacity: 0.3
+    // borderRadius: 500
   }
 });

@@ -61,7 +61,9 @@ ReactionGauge.defaultProps = {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    height: 42,
     justifyContent: "flex-start",
+    alignItems: "center",
     flexDirection: "row",
     transform: [{ translateX: 2 }]
   },

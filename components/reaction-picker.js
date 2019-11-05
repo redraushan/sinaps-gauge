@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Image, TouchableOpacity, View, Text } from "react-native";
 import { REACTION_COLOR } from "./constant";
+
 export default function ReactionPicker({ style, onPress, selectedReaction }) {
   return (
     <View style={{ ...styles.container, ...style }}>

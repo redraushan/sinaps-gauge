@@ -2,12 +2,18 @@ import React from "react";
 import ReactionGauge from "./reaction-gauge";
 import ReactionPicker from "./reaction-picker";
 import ReactionBar from "./reaction-bar";
-
 import { StyleSheet, View } from "react-native";
 
 export default class Reactions extends React.Component {
+  reactions = [
+    { id: 1, value: 33 },
+    { id: 2, value: 22 },
+    { id: 3, value: 0 },
+    { id: 4, value: 45 }
+  ];
   state = {
-    isOpen: true
+    isOpen: true,
+    reactions: this.reactions
   };
 
   toggleReaction = () => {
@@ -20,14 +26,18 @@ export default class Reactions extends React.Component {
     console.log(`reaction picked: ${reactionId}`);
     this.setState(prevState => ({
       isOpen: !prevState.isOpen,
-      reactionId: prevState.reactionId === reactionId ? null : reactionId
+      reactionId: prevState.reactionId === reactionId ? null : reactionId,
+      reactions:
+        prevState.reactionId === reactionId
+          ? this.reactions
+          : [{ id: reactionId, value: 100 }]
     }));
   };
 
   render() {
     console.log("rendering reactions..");
     const { style } = this.props;
-    const { isOpen, reactionId } = this.state;
+    const { isOpen, reactionId, reactions } = this.state;
     return (
       <React.Fragment>
         <View style={{ ...styles.container, ...style }}>
@@ -42,7 +52,7 @@ export default class Reactions extends React.Component {
             />
           ) : null}
         </View>
-        <ReactionBar />
+        <ReactionBar reactions={reactions} />
       </React.Fragment>
     );
   }
@@ -54,7 +64,8 @@ Reactions.defaultProps = {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    // flex: 1,
+    // alignItems: "center"
   },
   emoticonB: {
     transform: [{ translateX: -18 }],
