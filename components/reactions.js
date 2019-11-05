@@ -20,7 +20,7 @@ export default class Reactions extends React.Component {
     console.log(`reaction picked: ${reactionId}`);
     this.setState(prevState => ({
       isOpen: !prevState.isOpen,
-      reactionId
+      reactionId: prevState.reactionId === reactionId ? null : reactionId
     }));
   };
 

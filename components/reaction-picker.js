@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Image, TouchableOpacity, View, Text } from "react-native";
-
+import { REACTION_COLOR } from "./constant";
 export default function ReactionPicker({ style, onPress, selectedReaction }) {
   return (
     <View style={{ ...styles.container, ...style }}>
@@ -22,7 +22,7 @@ export default function ReactionPicker({ style, onPress, selectedReaction }) {
               style={{
                 ...styles.picked,
                 transform: [{ translateX: 0 }],
-                backgroundColor: "#56CCF2"
+                backgroundColor: REACTION_COLOR[1]
               }}
             >
               <Text style={styles.pickedTick}>&#10004;</Text>
@@ -46,7 +46,9 @@ export default function ReactionPicker({ style, onPress, selectedReaction }) {
           />
 
           {selectedReaction === 2 && (
-            <View style={{ ...styles.picked, backgroundColor: "#2D9CDB" }}>
+            <View
+              style={{ ...styles.picked, backgroundColor: REACTION_COLOR[2] }}
+            >
               <Text style={styles.pickedTick}>&#10004;</Text>
             </View>
           )}
@@ -67,7 +69,9 @@ export default function ReactionPicker({ style, onPress, selectedReaction }) {
             source={require("../assets/3.png")}
           />
           {selectedReaction === 3 && (
-            <View style={{ ...styles.picked, backgroundColor: "#2F80ED" }}>
+            <View
+              style={{ ...styles.picked, backgroundColor: REACTION_COLOR[3] }}
+            >
               <Text style={styles.pickedTick}>&#10004;</Text>
             </View>
           )}
@@ -88,7 +92,9 @@ export default function ReactionPicker({ style, onPress, selectedReaction }) {
             source={require("../assets/4.png")}
           />
           {selectedReaction === 4 && (
-            <View style={{ ...styles.picked, backgroundColor: "#936FCF" }}>
+            <View
+              style={{ ...styles.picked, backgroundColor: REACTION_COLOR[4] }}
+            >
               <Text style={styles.pickedTick}>&#10004;</Text>
             </View>
           )}
@@ -109,7 +115,9 @@ export default function ReactionPicker({ style, onPress, selectedReaction }) {
             source={require("../assets/5.png")}
           />
           {selectedReaction === 5 && (
-            <View style={{ ...styles.picked, backgroundColor: "#E167FF" }}>
+            <View
+              style={{ ...styles.picked, backgroundColor: REACTION_COLOR[5] }}
+            >
               <Text style={styles.pickedTick}>&#10004;</Text>
             </View>
           )}
@@ -130,7 +138,9 @@ export default function ReactionPicker({ style, onPress, selectedReaction }) {
           />
 
           {selectedReaction === 6 && (
-            <View style={{ ...styles.picked, backgroundColor: "#FF6767" }}>
+            <View
+              style={{ ...styles.picked, backgroundColor: REACTION_COLOR[6] }}
+            >
               <Text style={styles.pickedTick}>&#10004;</Text>
             </View>
           )}
@@ -150,7 +160,9 @@ export default function ReactionPicker({ style, onPress, selectedReaction }) {
             source={require("../assets/7.png")}
           />
           {selectedReaction === 7 && (
-            <View style={{ ...styles.picked, backgroundColor: "#D02222" }}>
+            <View
+              style={{ ...styles.picked, backgroundColor: REACTION_COLOR[7] }}
+            >
               <Text style={styles.pickedTick}>&#10004;</Text>
             </View>
           )}
