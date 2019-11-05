@@ -1,10 +1,11 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import Reactions from "./components/reactions";
+import { StyleSheet, View } from "react-native";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Sinaps</Text>
+      <Reactions style={styles.reactionGauge} />
     </View>
   );
 }
@@ -12,8 +13,12 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#fff"
+  },
+  reactionGauge: {
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "flex-start",
+    flexDirection: "row",
+    paddingLeft: 10
   }
 });
