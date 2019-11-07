@@ -44,11 +44,14 @@ export default class Reactions extends React.Component {
           <ReactionGauge
             selectedReaction={reactionId}
             onPress={this.toggleReaction}
+            style={{ flex: 1, flexGrow: 3 }}
           />
+
           {isOpen ? (
             <ReactionPicker
               selectedReaction={reactionId}
               onPress={this.handleReaction}
+              style={{ flex: 1, flexGrow: 3 }}
             />
           ) : null}
         </View>

@@ -33,14 +33,10 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: "center",
     flexDirection: "row",
-    paddingTop: 20
+    paddingTop: 20,
+    width: "95%"
   },
   bar: {
-    height: 10,
-    shadowOffset: { width: 0, height: 2 },
-    shadowColor: "black",
-    shadowRadius: 2,
-    shadowOpacity: 0.3
-    // borderRadius: 500
+    height: 10
   }
 });

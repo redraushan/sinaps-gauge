@@ -177,10 +177,15 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     backgroundColor: "white",
-    borderColor: "black",
+    borderColor: "transparent",
     borderRadius: 50,
     borderWidth: 2,
     borderStyle: "solid",
+    justifyContent: "space-around",
+    shadowOffset: { width: 0, height: 2 },
+    shadowColor: "black",
+    shadowRadius: 2,
+    shadowOpacity: 0.2,
     transform: [{ translateX: -12 }]
   },
   emoticons: {
