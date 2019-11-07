@@ -204,7 +204,7 @@ const styles = StyleSheet.create({
   pickedTick: {
     fontSize: 12,
     textAlign: "center",
-    marginTop: 4.5
+    marginTop: 4.8
   },
 
   emoticon1: {

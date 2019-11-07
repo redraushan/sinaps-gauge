@@ -2,7 +2,7 @@ import React from "react";
 import ReactionGauge from "./reaction-gauge";
 import ReactionPicker from "./reaction-picker";
 import ReactionBar from "./reaction-bar";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, TouchableOpacity } from "react-native";
 
 export default class Reactions extends React.Component {
   reactions = [
@@ -23,7 +23,6 @@ export default class Reactions extends React.Component {
   };
 
   handleReaction = reactionId => {
-    console.log(`reaction picked: ${reactionId}`);
     this.setState(prevState => ({
       isOpen: !prevState.isOpen,
       reactionId: prevState.reactionId === reactionId ? null : reactionId,
@@ -35,7 +34,6 @@ export default class Reactions extends React.Component {
   };
 
   render() {
-    console.log("rendering reactions..");
     const { style } = this.props;
     const { isOpen, reactionId, reactions } = this.state;
     return (
@@ -48,11 +46,23 @@ export default class Reactions extends React.Component {
           />
 
           {isOpen ? (
-            <ReactionPicker
-              selectedReaction={reactionId}
-              onPress={this.handleReaction}
-              style={{ flex: 1, flexGrow: 3 }}
-            />
+            <TouchableOpacity
+              onPress={this.toggleReaction}
+              style={{
+                position: "absolute",
+                backgroundColor: "tranparent",
+                paddingBottom: 400,
+                paddingTop: 400,
+                paddingLeft: 400,
+                right: 0
+              }}
+            >
+              <ReactionPicker
+                selectedReaction={reactionId}
+                onPress={this.handleReaction}
+                style={{ flex: 1, flexGrow: 5 }}
+              />
+            </TouchableOpacity>
           ) : null}
         </View>
         <ReactionBar reactions={reactions} />
