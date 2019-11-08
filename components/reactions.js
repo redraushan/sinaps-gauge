@@ -15,7 +15,7 @@ export default class Reactions extends React.Component {
     { id: 7, value: 2 }
   ];
   state = {
-    isOpen: true,
+    isOpen: false,
     reactions: this.reactions
   };
 
