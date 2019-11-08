@@ -8,16 +8,8 @@ export default function ReactionGauge({ style, onPress, selectedReaction }) {
         {!selectedReaction ? (
           <React.Fragment>
             <Image
-              style={styles.emoticon}
-              source={require("../assets/1.png")}
-            />
-            <Image
-              style={{ ...styles.emoticon, ...styles.emoticonB }}
-              source={require("../assets/2.png")}
-            />
-            <Image
-              style={{ ...styles.emoticon, ...styles.emoticonC }}
-              source={require("../assets/7.png")}
+              style={{ ...styles.emoticonC }}
+              source={require("../assets/trigger.png")}
             />
           </React.Fragment>
         ) : null}
@@ -72,8 +64,9 @@ const styles = StyleSheet.create({
     zIndex: -1
   },
   emoticonC: {
-    transform: [{ translateX: -35 }],
-    zIndex: -2
+    width: 80,
+    height: 40,
+    transform: [{ scaleX: 0.7 }, { scaleY: 0.7 }, { translateX: -18 }]
   },
   emoticon: {
     width: 30,

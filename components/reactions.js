@@ -8,8 +8,8 @@ export default class Reactions extends React.Component {
   reactions = [
     { id: 1, value: 33 },
     { id: 2, value: 22 },
-    { id: 3, value: 0 },
-    { id: 4, value: 45 }
+    { id: 3, value: 40 },
+    { id: 4, value: 5 }
   ];
   state = {
     isOpen: true,

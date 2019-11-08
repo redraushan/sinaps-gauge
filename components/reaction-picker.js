@@ -3,6 +3,10 @@ import { StyleSheet, Image, TouchableOpacity, View, Text } from "react-native";
 import { REACTION_COLOR } from "./constant";
 
 export default function ReactionPicker({ style, onPress, selectedReaction }) {
+  const renderTick = () => (
+    <Image style={styles.pickedTick} source={require("../assets/tick.png")} />
+  );
+
   return (
     <View style={{ ...styles.container, ...style }}>
       <TouchableOpacity onPress={() => onPress(1)}>
@@ -26,7 +30,7 @@ export default function ReactionPicker({ style, onPress, selectedReaction }) {
                 backgroundColor: REACTION_COLOR[1]
               }}
             >
-              <Text style={styles.pickedTick}>&#10004;</Text>
+              {renderTick()}
             </View>
           )}
         </View>
@@ -50,7 +54,7 @@ export default function ReactionPicker({ style, onPress, selectedReaction }) {
             <View
               style={{ ...styles.picked, backgroundColor: REACTION_COLOR[2] }}
             >
-              <Text style={styles.pickedTick}>&#10004;</Text>
+              {renderTick()}
             </View>
           )}
         </View>
@@ -73,7 +77,7 @@ export default function ReactionPicker({ style, onPress, selectedReaction }) {
             <View
               style={{ ...styles.picked, backgroundColor: REACTION_COLOR[3] }}
             >
-              <Text style={styles.pickedTick}>&#10004;</Text>
+              {renderTick()}
             </View>
           )}
         </View>
@@ -96,7 +100,7 @@ export default function ReactionPicker({ style, onPress, selectedReaction }) {
             <View
               style={{ ...styles.picked, backgroundColor: REACTION_COLOR[4] }}
             >
-              <Text style={styles.pickedTick}>&#10004;</Text>
+              {renderTick()}
             </View>
           )}
         </View>
@@ -119,7 +123,7 @@ export default function ReactionPicker({ style, onPress, selectedReaction }) {
             <View
               style={{ ...styles.picked, backgroundColor: REACTION_COLOR[5] }}
             >
-              <Text style={styles.pickedTick}>&#10004;</Text>
+              {renderTick()}
             </View>
           )}
         </View>
@@ -142,7 +146,7 @@ export default function ReactionPicker({ style, onPress, selectedReaction }) {
             <View
               style={{ ...styles.picked, backgroundColor: REACTION_COLOR[6] }}
             >
-              <Text style={styles.pickedTick}>&#10004;</Text>
+              {renderTick()}
             </View>
           )}
         </View>
@@ -164,7 +168,7 @@ export default function ReactionPicker({ style, onPress, selectedReaction }) {
             <View
               style={{ ...styles.picked, backgroundColor: REACTION_COLOR[7] }}
             >
-              <Text style={styles.pickedTick}>&#10004;</Text>
+              {renderTick()}
             </View>
           )}
         </View>
@@ -202,9 +206,10 @@ const styles = StyleSheet.create({
   },
 
   pickedTick: {
-    fontSize: 12,
-    textAlign: "center",
-    marginTop: 4.8
+    width: 16,
+    height: 16,
+    marginTop: 4.8,
+    marginLeft: 4.8
   },
 
   emoticon1: {
