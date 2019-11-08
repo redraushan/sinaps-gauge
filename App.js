@@ -2,15 +2,14 @@ import React from "react";
 import Reactions from "./components/reactions";
 import { StyleSheet, View, ScrollView } from "react-native";
 
-// value in percentage, sum of all the values should always be 100
 const reactions = [
   { id: 1, value: 33 },
   { id: 2, value: 22 },
   { id: 3, value: 10 },
-  { id: 4, value: 5 },
-  { id: 5, value: 8 },
-  { id: 6, value: 20 },
-  { id: 7, value: 2 }
+  { id: 4, value: 50 },
+  { id: 5, value: 22 },
+  { id: 6, value: 40 },
+  { id: 7, value: 60 }
 ];
 
 export default function App() {

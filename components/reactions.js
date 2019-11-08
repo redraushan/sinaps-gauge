@@ -36,7 +36,7 @@ export default class Reactions extends React.Component {
           <ReactionGauge
             selectedReaction={reactionId}
             onPress={this.toggleReaction}
-            style={{ flex: 1, flexGrow: 3 }}
+            style={{ flex: 1, flexGrow: 5 }}
           />
 
           {isOpen ? (
@@ -54,7 +54,7 @@ export default class Reactions extends React.Component {
               <ReactionPicker
                 selectedReaction={reactionId}
                 onPress={this.handleReaction}
-                style={{ flex: 1, flexGrow: 5 }}
+                style={{ flex: 1, flexGrow: 3 }}
               />
             </TouchableOpacity>
           ) : null}

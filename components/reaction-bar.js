@@ -3,6 +3,13 @@ import { StyleSheet, View } from "react-native";
 import { REACTION_COLOR } from "./constant";
 
 export default function ReactionBar({ reactions }) {
+  const totalReactions = reactions.reduce((pv, cv) => {
+    return pv + cv.value;
+  }, 0);
+
+  const getPercentage = reaction => {
+    return (reaction / totalReactions) * 100;
+  };
   return (
     <View style={styles.container}>
       {reactions.map((reaction, index, arr) => {
@@ -12,7 +19,7 @@ export default function ReactionBar({ reactions }) {
             style={{
               ...styles.bar,
               backgroundColor: REACTION_COLOR[reaction.id],
-              width: `${reaction.value}%`,
+              width: `${getPercentage(reaction.value)}%`,
               borderTopLeftRadius: index === 0 ? 500 : 0,
               borderBottomLeftRadius: index === 0 ? 500 : 0,
               borderTopRightRadius: index === arr.length - 1 ? 500 : 0,
