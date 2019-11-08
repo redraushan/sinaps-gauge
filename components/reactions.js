@@ -1,22 +1,13 @@
 import React from "react";
+import PropTypes from "prop-types";
 import ReactionGauge from "./reaction-gauge";
 import ReactionPicker from "./reaction-picker";
 import ReactionBar from "./reaction-bar";
-import { StyleSheet, View, TouchableOpacity } from "react-native";
+import { View, TouchableOpacity } from "react-native";
 
 export default class Reactions extends React.Component {
-  reactions = [
-    { id: 1, value: 33 },
-    { id: 2, value: 22 },
-    { id: 3, value: 40 },
-    { id: 4, value: 5 },
-    { id: 5, value: 22 },
-    { id: 6, value: 40 },
-    { id: 7, value: 2 }
-  ];
   state = {
-    isOpen: false,
-    reactions: this.reactions
+    isOpen: false
   };
 
   toggleReaction = () => {
@@ -37,11 +28,11 @@ export default class Reactions extends React.Component {
   };
 
   render() {
-    const { style } = this.props;
-    const { isOpen, reactionId, reactions } = this.state;
+    const { style, reactions } = this.props;
+    const { isOpen, reactionId } = this.state;
     return (
       <React.Fragment>
-        <View style={{ ...styles.container, ...style }}>
+        <View style={{ ...style }}>
           <ReactionGauge
             selectedReaction={reactionId}
             onPress={this.toggleReaction}
@@ -75,24 +66,13 @@ export default class Reactions extends React.Component {
 }
 
 Reactions.defaultProps = {
-  onClick: () => {}
+  onClick: () => {},
+  reactions: [{ id: 1, value: 100 }]
 };
 
-const styles = StyleSheet.create({
-  container: {
-    // flex: 1,
-    // alignItems: "center"
-  },
-  emoticonB: {
-    transform: [{ translateX: -18 }],
-    zIndex: -1
-  },
-  emoticonC: {
-    transform: [{ translateX: -35 }],
-    zIndex: -2
-  },
-  emoticon: {
-    width: 20,
-    height: 20
-  }
-});
+Reactions.propTypes = {
+  onClick: PropTypes.func,
+  reactions: PropTypes.arrayOf(
+    PropTypes.shape({ id: PropTypes.number, value: PropTypes.number })
+  )
+};
