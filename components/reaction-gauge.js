@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
   emoticonC: {
     width: 80,
     height: 40,
-    transform: [{ scaleX: 0.7 }, { scaleY: 0.7 }, { translateX: -25 }]
+    transform: [{ scaleX: 0.7 }, { scaleY: 0.7 }, { translateX: -17 }]
   },
   emoticon: {
     width: 30,
