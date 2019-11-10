@@ -15,15 +15,7 @@ const reactions = [
 export default function App() {
   return (
     <ScrollView style={styles.container}>
-      <View
-        style={{
-          margin: 20,
-          borderRadius: 15,
-          backgroundColor: "#F1F3F7",
-          justifyContent: "center",
-          marginTop: 100
-        }}
-      >
+      <View style={{ ...style.reactionContainer }}>
         <Reactions reactions={reactions} style={styles.reactionGauge} />
       </View>
     </ScrollView>
@@ -34,6 +26,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff"
+  },
+  reactionContainer: {
+    margin: 20,
+    borderRadius: 15,
+    backgroundColor: "#F1F3F7",
+    justifyContent: "center",
+    padding: 30,
+    marginTop: 100
   },
   reactionGauge: {
     alignItems: "center",
