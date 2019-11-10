@@ -21,7 +21,6 @@ export default function App() {
           borderRadius: 15,
           backgroundColor: "#F1F3F7",
           justifyContent: "center",
-          padding: 30,
           marginTop: 100
         }}
       >
