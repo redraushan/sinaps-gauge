@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import ReactionGauge from "./reaction-gauge";
 import ReactionPicker from "./reaction-picker";
 import ReactionBar from "./reaction-bar";
-import { View, TouchableOpacity } from "react-native";
+import { StyleSheet, View, TouchableOpacity } from "react-native";
 
 export default class Reactions extends React.Component {
   state = {
@@ -42,14 +42,7 @@ export default class Reactions extends React.Component {
           {isOpen ? (
             <TouchableOpacity
               onPress={this.toggleReaction}
-              style={{
-                position: "absolute",
-                backgroundColor: "tranparent",
-                paddingBottom: 400,
-                paddingTop: 400,
-                paddingLeft: 400,
-                right: 0
-              }}
+              style={{ ...style.reactionPicker }}
             >
               <ReactionPicker
                 selectedReaction={reactionId}
@@ -76,3 +69,14 @@ Reactions.propTypes = {
     PropTypes.shape({ id: PropTypes.number, value: PropTypes.number })
   )
 };
+
+const style = StyleSheet.create({
+  reactionPicker: {
+    position: "absolute",
+    backgroundColor: "transparent",
+    paddingBottom: 400,
+    paddingTop: 400,
+    paddingLeft: 400,
+    right: 0
+  }
+});
