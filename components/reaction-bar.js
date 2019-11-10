@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     flexDirection: "row",
     paddingTop: 20,
-    width: "95%"
+    width: "100%"
   },
   bar: {
     height: 10
